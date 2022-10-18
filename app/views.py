@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse,JsonResponse
-from django.contrib.auth.models import user,reservation
+from .models import user,Reservation
 import smtplib
 from email.message import EmailMessage
 import pyautogui
@@ -36,13 +36,16 @@ def login(request):
     if(request.method== "POST" ):
         username=request.POST['username']
         password=request.POST['password']
-        
-        global curr_user
-            curr_user=username
-            return render(request,"home.html",{curr_user:'curr'})
-        else:
-            message=""
-            return render(request,"login.html",{message:"Invalid credentails"})
+        u=user.objects.all()
+        for i in u:
+            if(i.username ==username and i.password == password ):
+                flag=1
+                global var 
+                var=i.name
+                return render(request,"home.html",{'name':var})
+        if(flag==0):
+            return render(request,"login.html",{'message':"wrong credentials"})
+
     else:
         return render(request,"login.html")
 
@@ -56,7 +59,7 @@ def register(request):
         password1=request.POST['password1']
         password2=request.POST['password2']
         if(password1==password2):
-            t=user.objects.create(name=name,username=username,dept=dept,phno=phno,img=img,password=password1)
+            t=user.objects.create(name=name,email=email,gender=gender,phno=phno,password=password1)
             t.save()
             return render(request,"login.html")
         else:
