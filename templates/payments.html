@@ -1,0 +1,96 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="style.css" class="css" />
+    <style>
+        body{
+    padding-top: 15rem;
+}
+.container{
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    border: 5px solid rgb(0, 0, 0);
+}
+.UPI{
+    padding: auto;
+    transition-duration: 0.4s;
+    height: 2.5rem;
+    width: 3rem;
+}
+.UPI:hover{
+    background-color:rgb(214, 244, 247);
+}
+.net_banking{
+    padding: auto;
+    transition-duration: 0.4s;
+    height: 2.5rem;
+    width: 10rem;
+}
+.net_banking:hover{
+    background-color:rgb(214, 244, 247);
+}
+.submit_btn{
+    padding: auto;
+    transition-duration: 0.4s;
+    height: 2.5rem;
+    width: 3.5rem;
+}
+.submit_btn:hover{
+    background-color:rgb(214, 244, 247);
+}
+.image{
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+    </style>
+</head>
+
+<body>
+    <form action="pay" method="POST">
+        <div class="container">
+            <div class="last-content">
+                <button type="button" class="UPI">
+                    UPI
+                </button>
+                <button type="button" class="net_banking">
+                    Pay with Netbanking
+                </button>
+            </div>
+    
+            <div class="card-details">
+                <img src="download.png" alt="Pay Using Debit Or Credit Card" width="250" height="150" class="image">
+                <input type="email" name="email">
+                <div class="card-number">
+                    <label> Card Number :</label>
+                    <input type="text" class="card-number-field" placeholder="###-###-###" />
+                </div>
+                <br />
+                <div class="date-number">
+                    <label> Expiry Date :</label>
+                    <input type="text" class="date-number-field" placeholder="DD-MM-YY" />
+                </div>
+                <br/>
+                <div class="cvv-number">
+                    <label> CVV number :</label>
+                    <input type="text" class="cvv-number-field" placeholder="xxx" />
+                </div>
+                <br/>
+                <div class="nameholder-number">
+                    <label> Card Holder name :</label>
+                    <input type="text" class="card-name-field" placeholder="Enter your Name" />
+                </div>
+                <br/>
+                <button type="submit" class="submit_btn">
+                    submit
+                </button>
+            </div>
+        </div>
+
+    </form>
+    
+</body>
+</html>

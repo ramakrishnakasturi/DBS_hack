@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Booking Page</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+      body {
+    width: 500px;
+    margin: 0 auto;
+    padding: 50px;
+  }
+  
+  div.form_fields{
+    margin: 20px 0;
+  }
+  
+  
+  button {
+    height: 50px;
+    background:blue;
+    border: none;
+    color: white;
+    font-size: 1.25em;
+    font-family: 'Nanum Gothic';
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    border: 2px solid black;
+  }
+    </style>
+  </head>
+  <body>
+    <script src="index.js"></script>
+    <form action="book" method="POST">
+       {%csrf_token%}
+        <div class="form_fields">
+            <label for="From">Starting Station</label>
+            <select name="source" id="Stations">
+                <option value="Station A">Station A</option>
+                <option value="Station B">Station B</option>
+                <option value="Station C">Station C</option>
+                <option value="Station D">Station D</option>
+                <option value="Station E">Station E</option>
+                <option value="Station F">Station F</option>
+            </select>
+        </div>
+        <div class="form_fields">
+            <label for="From">Ending Station</label>
+            <select name="destination" id="Stations">
+                <option value="Station A">Station A</option>
+                <option value="Station B">Station B</option>
+                <option value="Station C">Station C</option>
+                <option value="Station D">Station D</option>
+                <option value="Station E">Station E</option>
+                <option value="Station F">Station F</option>
+            </select>
+        </div>
+        <button type="submit">Conform and Proceed</button>
+    </form>
+	
+    
+  </body>
+</html>

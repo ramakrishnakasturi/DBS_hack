@@ -1,0 +1,41 @@
+<html>
+<body>
+<Center>
+<Font size="+3" color=red>Railway Registration Form</font>
+<form method=post action="register">
+    {%csrf_token%}
+<table>
+    <tr>
+        <td>GENDER:  </td>
+        <td><input type=radio name="gender" value=male/>male<br>
+        <input type=radio name="gender" value=female/>female<br>
+        <input type=radio name="gender" value=other/>other<br>
+        </td>
+        </tr>
+<td>EMAIL ID: </td>
+<td><input type=text name="email" /><br></tr>
+<tr>
+<td>PHONE NUMBER: </td>
+<td><input type=text name="phno" /><br></tr>
+<tr>
+<td>AGE: </td>
+<td><input type=text name="age" /><br></tr>
+<tr>
+
+<td>Name: </td>
+    <td><input type=text name="name" /><br></tr>
+    <tr>
+        <td>password1 </td>
+        <td><input type=text name="password1" /><br></tr>
+    <tr>
+        <tr>
+            <td>password2 </td>
+            <td><input type=text name="password2" /><br></tr>
+        <tr>
+            <td>
+            </td>
+            <td><input type=submit  value=SUBMIT><br>
+            </tr>
+</form>
+</body>
+</html>
