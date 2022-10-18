@@ -286,10 +286,10 @@ form .btn input[type="submit"]{
                 <form action="login" class="signup">
                     {%csrf_token%}
                     <div class="field">
-                        <input type="text" placeholder="Name" required>
+                        <input type="text" name="name" required>
                     </div>
                     <div class="field">
-                        <input type="password" placeholder="Password" required>
+                        <input type="password" name="password" placeholder="Password" required>
                     </div>
                     
                     <div class="field btn">

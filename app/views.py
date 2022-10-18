@@ -34,15 +34,15 @@ def pay(request):
 
 def login(request):
     if(request.method== "POST" ):
-        username=request.POST['username']
+        username=request.POST['email']
         password=request.POST['password']
         u=user.objects.all()
         for i in u:
-            if(i.username ==username and i.password == password ):
+            if(i.name == username and i.password == password ):
                 flag=1
                 global var 
                 var=i.name
-                return render(request,"home.html",{'name':var})
+                return render(request,"homepage.html",{'name':var})
         if(flag==0):
             return render(request,"login.html",{'message':"wrong credentials"})
 
